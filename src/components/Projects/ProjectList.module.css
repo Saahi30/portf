@@ -1,0 +1,121 @@
+.section {
+    padding: 120px 40px;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 80px;
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-grey);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: padding 0.4s ease, border-color 0.4s ease;
+    overflow: hidden;
+}
+
+.item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.item:hover {
+    padding: 80px 20px;
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.itemContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 2;
+    transition: transform 0.4s ease;
+}
+
+.item:hover .itemContent {
+    transform: translateX(10px);
+}
+
+.projectTitle {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text-ivory);
+    margin: 0;
+    line-height: 1;
+}
+
+.projectRole {
+    font-family: var(--font-sans);
+    color: var(--accent-gold);
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.projectDesc {
+    font-family: var(--font-sans);
+    color: var(--text-grey);
+    max-width: 400px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 8px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.item:hover .projectDesc {
+    opacity: 1;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: var(--text-ivory);
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease;
+}
+
+.item:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 20px;
+    }
+
+    .item {
+        padding: 40px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .item:hover {
+        padding: 60px 10px;
+    }
+}

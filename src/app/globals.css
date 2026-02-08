@@ -1,27 +1,13 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --bg-charcoal: #08090B;
+  --bg-surface: #1A1C20;
+  --text-ivory: #EAEAEA;
+  --text-grey: #9CA3AF;
+  --accent-gold: #C6B289;
+  --border-steel: #2D3036;
+  
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-manrope);
 }
 
 * {
@@ -30,13 +16,21 @@ body {
   margin: 0;
 }
 
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-charcoal);
+  color: var(--text-ivory);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+::selection {
+  background-color: var(--accent-gold);
+  color: var(--bg-charcoal);
 }
